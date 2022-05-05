@@ -26,6 +26,6 @@ int main ()
                low = h;
            }
         }
-        cout << "Case " <<tc++ <<": "<<setprecision(6) << fixed << low << '\n';
+        cout << "Case " <<tc++ <<": "<<setprecision(6) << fixed << low << '\n'; //high or low. both are correct
     }
 }
