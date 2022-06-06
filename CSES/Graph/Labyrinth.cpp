@@ -4,63 +4,86 @@ using namespace std;
 #define f first
 #define s second
 
-ll dx[]={-1,1,0,0},dy[]={0,0,-1,1};
-string dir="UDLR";
+int n,m;
 bool vis[1005][1005];
-ll p[1005][1005];
+pair<int, int>st, en;
+int dx[]={0,0,-1,1}, dy[]={-1,1,0,0};
+int pa[1005][1005];
+string s="LRUD";
+
+bool is_possible(int x, int y)
+{
+	return (x<n && x>=0 && y<m && y>=0 && !vis[x][y]);
+}
+
+void bfs (pair<int, int> a)
+{
+	vis[a.f][a.s]=true;
+	pa[a.f][a.s]=-1;
+	
+	queue<pair<int,int>>q;
+	
+	q.push({a.f, a.s});
+	
+	while(!q.empty())
+	{
+		pair<int, int> p= q.front();
+		q.pop();
+		
+		for(int i=0;i<4;i++)
+		{
+			if(is_possible(p.f+dx[i], p.s+dy[i]))
+			{
+				vis[p.f+dx[i]][p.s+dy[i]]=true;
+				pa[p.f+dx[i]][p.s+dy[i]]=i;
+				q.push({p.f+dx[i], p.s+dy[i]});
+			}
+		}
+		
+		
+	}
+}
 
 int main()
 {
-    ll n,m; cin >> n >> m;
-    getchar();
-    char c;
-    pair<ll,ll> start, finish;
-    for(ll i=0;i<n;i++)
-    {
-        for(ll j=0;j<m;j++)
-        {
-            cin >> c;
-            if(c=='A')start={i,j};
-            else if(c=='B')finish={i,j};
-            else if(c=='#')vis[i][j]=true;
-        }
-    }
-
-    queue<pair<ll,ll>>q;
-    q.push(start);
-    vis[start.f][start.s]=true;
-    while(!q.empty())
-    {
-       pair<ll,ll> temp=q.front();
-       q.pop();
-       for(ll i=0;i<4;i++)
-       {
-           ll tempx=temp.f+dx[i],tempy=temp.s+dy[i];
-           if(tempx>=0 && tempx<n && tempy>=0 && tempy<m && !vis[tempx][tempy])
-           {
-               q.push({tempx,tempy});
-               vis[tempx][tempy]=true;
-               p[tempx][tempy]=i;
-
-           }
-       }
-
-    }
-    if(vis[finish.f][finish.s])
-    {
-        cout<<"YES\n";
-        vector<ll>ans;
-        while(finish!=start)
-        {
-            ll i = p[finish.f][finish.s];
-            ans.push_back(i);
-            finish={finish.f-dx[i], finish.s-dy[i]};
-        }
-        reverse(ans.begin(),ans.end());
-        cout<<ans.size()<<endl;
-        for(ll c:ans)
-            cout<<dir[c];
-    }
-    else
-        cout<<"NO";
+	cin >> n >> m;
+	for(int i=0; i<n; i++)
+	{
+		for(int j=0; j<m; j++)
+		{
+			char c;
+			cin >> c;
+			vis[i][j]=(c=='#');
+			if(c=='A')st={i,j};
+			if(c=='B')en={i,j};
+		}
+	}
+	
+	bfs(st);
+	
+	if(!vis[en.f][en.s])
+	{
+		cout << "NO";
+		return 0;
+	}
+	std::vector<int>ans;
+	
+	while(en!=st)
+	{	
+		int p = pa[en.f][en.s];
+		ans.push_back(p);
+		en={en.f-dx[p], en.s-dy[p]};
+	}
+	
+	reverse(ans.begin(), ans.end());
+	
+	cout << "YES\n";
+	
+	cout << ans.size() << '\n';
+	
+	for(auto c: ans)
+	{
+		cout <<s[c];
+	}
+	
 }
