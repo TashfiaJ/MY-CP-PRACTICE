@@ -1,6 +1,6 @@
 void make_set(int v) {
     parent[v] = v;
-    size[v] = 1;
+    Size[v] = 1;
 }
 
 int find_set(int v) {
@@ -15,9 +15,9 @@ void union_sets(int a, int b) {
     b = find_set(b);
     if (a != b) {
         // Union by size
-        if (size[a] < size[b])
+        if (Size[a] < Size[b])
             swap(a, b);
         parent[b] = a;
-        size[a] += size[b];
+        Size[a] += Size[b];
     }
 }
