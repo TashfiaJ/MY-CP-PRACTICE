@@ -24,7 +24,7 @@ public:
 
 // Tabulation
 // time complexity = O(n)
-// space complexity = O(n)+O(n)
+// space complexity = O(n)
 class Solution {
 public:
     int solve(int ind, int dp[], vector<int>& cost)
