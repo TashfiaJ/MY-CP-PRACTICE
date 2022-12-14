@@ -47,3 +47,26 @@ public:
         return solve(cost.size(), dp, cost);
     }
 };
+
+// space optimization
+// time complexity = O(n)
+// space complexity = O(1)
+class Solution {
+public:
+    int solve(int ind, vector<int>& cost)
+    {
+        int prev1=0;
+        int prev2=0;
+        for(int i=2;i<=ind;i++)
+        {
+            int cur=prev2+cost[i-1];
+            if(i>1)cur=min(cur, prev1+cost[i-2]);
+            prev1=prev2;
+            prev2=cur;
+        }
+        return prev2;
+    }
+    int minCostClimbingStairs(vector<int>& cost) {
+        return solve(cost.size(), cost);
+    }
+};
