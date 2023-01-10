@@ -32,7 +32,7 @@ void solve()
                 count = 1;
                 for(int left=j-1;left>=0;left--)
                 {
-                    if(a[i][j]==a[i][left])count++;
+                    if(a[i][j]==a[i][left])count++; 
                     else break;
                 }
                 for(int right=j+1;right<m;right++)
