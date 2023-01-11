@@ -13,11 +13,11 @@ int my_random(int l, int r)
 }
 const ll N = 1e5+5;
 vector<pair<ll,ll>>g[N];
-ll dis[N];
+ll dis[N], par[N];
 bool vis[N];
 void dijkstra(ll node)
 {
-    memset(dis, 1000000000, sizeof(dis));
+    for(ll i=0;i<=N;i++)dis[i]=-1;
     dis[node]=0;
     set<pair<ll,ll>>st;
     st.insert({0,node});
@@ -33,15 +33,27 @@ void dijkstra(ll node)
         {
             ll adj_nd=x.first;
             ll adj_wt=x.second;
-            if(dis[adj_nd]>dis[v]+adj_wt)
+            if(dis[adj_nd]>dis[v]+adj_wt || dis[adj_nd]==-1)
             {
                 dis[adj_nd]=dis[v]+adj_wt;
                 st.insert({dis[adj_nd], adj_nd});
+                par[adj_nd]=v;
             }
         }
     }
 }
-
+vector<ll> path(ll node)
+{   
+    vector<ll>shortest_path;
+    while(par[node]!=0)
+    {
+        shortest_path.push_back(node);
+        node=par[node];
+    }
+    shortest_path.push_back(node);
+    reverse(shortest_path.begin(), shortest_path.end());
+    return shortest_path;
+}
 void solve()
 {
     ll n, m;
@@ -54,7 +66,10 @@ void solve()
         g[y].push_back({x,z});
     }
     dijkstra(1);
-    cout<<dis[n];
+    if(dis[n]==-1)cout<<-1;
+    else{
+    vector<ll>ans=path(n);
+    for(ll i=0;i<ans.size();i++)cout<<ans[i]<<" ";}
 }
 
 int main()
