@@ -31,6 +31,11 @@ void dfs(ll node, ll par=-1)
 void solve()
 {   
     cin>>n;
+    if(n==1)
+    {
+        cout<<0;
+        return;
+    }
     for(ll i=1;i<=n-1;i++)
     {
         ll x, y;
