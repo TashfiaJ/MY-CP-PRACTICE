@@ -6,6 +6,10 @@ typedef pair<ll, ll> pi;
 #define pb push_back
 #define F first
 #define S second
+#define SetBit(x, k) (x |= (1LL << k))
+#define ClearBit(x, k) (x &= ~(1LL << k))
+#define CheckBit(x, k) (x & (1LL << k))
+
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int my_random(int l, int r)
 {
