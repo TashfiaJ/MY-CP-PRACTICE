@@ -33,3 +33,5 @@ int main()
         solve();
     }
 }
+
+// to run in command prompt, g++ A.cpp && .\a.exe < in.txt
