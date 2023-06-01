@@ -1,3 +1,6 @@
+// to check if x can visit 1, we can run dfs from 1 but we need to reverse the graph direction.
+
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
