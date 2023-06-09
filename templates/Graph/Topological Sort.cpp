@@ -3,17 +3,28 @@ using namespace std;
 #define ll long long
 const ll N = 1e5;
 vector<ll>g[N];
-bool vis[N];
+ll vis[N];
 stack<ll>stk;
+bool cycle=false;
 ll n,e;
 void dfs(ll node)
 {
-    vis[node]=true;
+    vis[node]=1;
     for(auto x: g[node])
     {
-        if(!vis[x])dfs(x);
+        if(vis[x]==0)
+        {
+            dfs(x);
+        }
+        else if(vis[x]==1)
+        {
+            cycle=true;
+            return;
+        }
+        else continue;
     }
     stk.push(node);
+    vis[node]=2;
 }
 int main()
 {
@@ -31,9 +42,17 @@ int main()
             dfs(i);
         }
     }
-    while(!stk.empty())
+    if(cycle)
     {
-        cout<<stk.top()<<" ";
-        stk.pop();
+        cout << "IMPOSSIBLE";
+        return;
+    }
+    else
+    {
+        while(!stk.empty())
+        {
+            cout << stk.top() << " ";
+            stk.pop();
+        }
     }
 }
