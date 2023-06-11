@@ -65,7 +65,7 @@ void solve()
         }
         dep[i]=0;
     }
-    // 2ta leaf node peye gesi
+    // 2ta end point peye gesi
     dfs(mx_node1);
     for(ll i=1;i<=n;i++)
     {
