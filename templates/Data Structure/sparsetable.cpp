@@ -1,53 +1,40 @@
-#define MAX 500
- 
-// lookup[i][j] is going to store minimum
-// value in arr[i..j]. Ideally lookup table
-// size should not be fixed and should be
-// determined using n Log n. It is kept
-// constant to keep code simple.
-int lookup[MAX][MAX];
- 
-// Fills lookup array lookup[][] in bottom up manner.
-void buildSparseTable(int arr[], int n)
-{
-    // Initialize M for the intervals with length 1
-    for (int i = 0; i < n; i++)
-        lookup[i][0] = arr[i];
- 
-    // Compute values from smaller to bigger intervals
-    for (int j = 1; (1 << j) <= n; j++) {
- 
-        // Compute minimum value for all intervals with
-        // size 2^j
-        for (int i = 0; (i + (1 << j) - 1) < n; i++) {
- 
-            // For arr[2][10], we compare arr[lookup[0][7]]
-            // and arr[lookup[3][10]]
-            if (lookup[i][j - 1] <
-                        lookup[i + (1 << (j - 1))][j - 1])
-                lookup[i][j] = lookup[i][j - 1];
-            else
-                lookup[i][j] =
-                         lookup[i + (1 << (j - 1))][j - 1];
-        }
-    }
+// video https://youtu.be/0jWeUdxrGm4
+// problem https://cses.fi/problemset/task/1647/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+const ll MAX_N = 2e5+5;
+ll a[MAX_N];
+ll m[MAX_N][17]; // m[i][j] is minimum among a[i..i+2^j-1]
+
+
+ll query(ll L, ll R) { // O(1)
+	ll length = R - L + 1;
+	ll k = log2(length);
+	return min(m[L][k], m[R-(1<<k)+1][k]);
 }
- 
-// Returns minimum of arr[L..R]
-int query(int L, int R)
-{
-    // Find highest power of 2 that is smaller
-    // than or equal to count of elements in given
-    // range. For [2, 10], j = 3
-    int j = (int)log2(R - L + 1);
- 
-    // Compute minimum of last 2^j elements with first
-    // 2^j elements in range.
-    // For [2, 10], we compare arr[lookup[0][3]] and
-    // arr[lookup[3][3]],
-    if (lookup[L][j] <= lookup[R - (1 << j) + 1][j])
-        return lookup[L][j];
- 
-    else
-        return lookup[R - (1 << j) + 1][j];
+
+int main() {
+	// 1) read input
+	ll n, q;
+	cin >> n >> q;
+	for(ll i = 1; i <= n; i++) {
+		cin >> a[i];
+		m[i][0] = a[i];
+	}
+	// 2) preprocessing, O(N*log(N))
+    ll LOG = log2(n);
+	for(ll k = 1; k <= LOG; k++) {
+		for(ll i = 1; i + (1 << k) - 1 <= n; i++) {
+			m[i][k] = min(m[i][k-1], m[i+(1<<(k-1))][k-1]);
+		}
+	}
+	// 3) answer queries
+	
+	for(ll i = 0; i < q; i++) {
+		ll L, R;
+		cin >> L >> R;
+		cout << query(L, R) << "\n";
+	}
 }
