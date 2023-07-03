@@ -1,5 +1,8 @@
 // video https://youtu.be/0jWeUdxrGm4
 // problem https://cses.fi/problemset/task/1647/
+// max, min, gcd
+// nope - sum
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
