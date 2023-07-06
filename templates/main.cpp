@@ -38,3 +38,5 @@ int main()
 }
 
 // to run in command prompt, g++ A.cpp && .\a.exe < in.txt
+// g++ filename.cpp ->compile
+// ./a.out -> run
