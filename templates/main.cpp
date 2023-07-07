@@ -2,6 +2,7 @@
 using namespace std;
 typedef long long int ll;
 typedef pair<ll, ll> pi;
+#define lll __int128_t
 #define mp make_pair
 #define pb push_back
 #define F first
