@@ -1,0 +1,4 @@
+Geometric progression:
+ar^0, ar^1, ar^2, ar^3, ..., ar^(n-1)
+nth term: ar^(n-1)
+sum: a*((r^(n)-1)/(r-1))
