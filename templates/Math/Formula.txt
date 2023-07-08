@@ -1,4 +1,10 @@
 Geometric progression:
 ar^0, ar^1, ar^2, ar^3, ..., ar^(n-1)
 nth term: ar^(n-1)
-sum: a*((r^(n)-1)/(r-1))
+sum: a*((r^(n)-1)/(r-1)) ; r!=1 && r>1
+
+Arithmetic progression:
+a, a+d, a+2*d, a+3*d, .....
+nth term: a+ ((n-1)*d)
+sum: (n/2)*((2*a)+(n-1)*d)
+sum(1st and last term is given): (n/2)*(1st term+last term)
