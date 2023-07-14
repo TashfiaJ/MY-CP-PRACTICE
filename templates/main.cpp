@@ -13,6 +13,11 @@ typedef pair<ll, ll> pi;
 const ll inf = 1LL<<60; //1.15e18
 const ll md = 1000000007;
 
+ll dx[]={0,1,0,-1};
+ll dy[]={1,0,-1,0};
+ll dxx[]={0,1,0,-1,1,1,-1,-1};
+ll dyy[]={1,0,-1,0,1,-1,1,-1};
+
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int my_random(int l, int r)
 {
