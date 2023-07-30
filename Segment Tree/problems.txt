@@ -1,0 +1,5 @@
+1. index of k-th set bit in a binary array
+2. two types of operation. add element in array and k-th element after sort the array
+3. number of inversion in an array
+4. maximum subarray sum in an array with updates
+5. two types of operation. add element in array and find smallest element which is greater that or equal to x 
