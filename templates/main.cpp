@@ -11,6 +11,7 @@ typedef pair<ll, ll> pi;
 #define ClearBit(x, k) (x &= ~(1LL << k))
 #define CheckBit(x, k) (x & (1LL << k))
 #define debug(x)       { cerr << #x << " = " << x << endl; }
+double pi = 2*acos(0.0);
 const ll inf = 1LL<<60; //1.15e18
 const ll md = 1000000007;
 
