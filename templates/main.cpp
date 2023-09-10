@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
 using namespace std;
+using namespace __gnu_pbds;
 typedef long long int ll;
 #define lll __int128_t
 #define mp make_pair
@@ -13,6 +15,10 @@ typedef long long int ll;
 double pi = 2*acos(0.0);
 const ll inf = 1LL<<60; //1.15e18
 const ll md = 1000000007;
+
+template <class T>
+using Tree =
+    tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 ll dx[]={0,1,0,-1};
 ll dy[]={1,0,-1,0};
