@@ -11,3 +11,7 @@ sum(1st and last term is given): (n/2)*(1st term+last term)
 
 lcm(a,b)=(a⋅b)/(gcd(a,b));
 lcm(a,b,c)=(a⋅b⋅c⋅gcd(a,b,c))/(gcd(a,b)⋅gcd(a,c)⋅gcd(b,c));
+
+
+Vieta's Formula for Quadratic Equation
+If f(x) = ax2 + bx + c is a quadratic equation with roots α and β then, Sum of roots = α + β = -b/a. Product of roots = αβ = c/a.
