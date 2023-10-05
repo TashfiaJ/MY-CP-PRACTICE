@@ -31,6 +31,41 @@ int my_random(int l, int r)
     return uniform_int_distribution<int>(l, r) (rng);
 }
 
+int bigmod(int a, int b)
+{
+    int ans =1;
+    while(b>0)
+    {
+        if(b&1)
+        {
+            ans = (ans*1ll*a)%mod;
+        }
+        a= (a*1ll*a)%mod;
+        b>>=1;
+    }
+    return ans;
+}
+ 
+inline int add(int x, int y)
+{
+    return (x+y>=mod ? x+y-mod : x+y);
+}
+ 
+inline int sub(int x, int y)
+{
+    return (x-y<0 ? x-y+mod : x-y);
+}
+ 
+inline int gun(int x, int y)
+{
+    return ((x*1ll*y)%mod);
+}
+ 
+inline int vag(int x, int y)
+{
+    return (x*1ll* bigmod(y,mod - 2))%mod;
+}
+
 void solve()
 {
     
