@@ -1,0 +1,3 @@
+circumradius of the triangle is R=abc/4A ; A-> area of that triangle
+
+
