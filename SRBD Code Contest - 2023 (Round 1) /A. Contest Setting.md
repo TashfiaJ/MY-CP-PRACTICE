@@ -49,3 +49,8 @@ signed main()
 }
 ```
 </details>
+
+<details>
+<Summary>Idea2</Summary>
+Quadratic equation: m^2$ + 2my -2b=0
+</details>
