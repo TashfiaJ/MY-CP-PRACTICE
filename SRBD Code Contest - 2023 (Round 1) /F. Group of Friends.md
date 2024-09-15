@@ -4,6 +4,11 @@
 # Solution
 
 <details>
+<Summary>Hint</Summary>
+DSU
+</details>
+
+<details>
 <summary>Idea</summary>
 
 It is clear that, if there are two numbers $x$ and $y$, where $x$ is a multiple of $y$, then $x$ and $y$ are in the same group.
