@@ -8,7 +8,9 @@ We can just do a binary search on the value of $m$ to find the maximum value of 
 </details>
 <details>
 <Summary>Code</Summary>
+    
 ```cpp
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
