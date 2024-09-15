@@ -6,6 +6,8 @@
 <details>
 <summary>Hint</summary>
 Bit Manipulation
+</details>
+<details>
 <summary>Idea</summary>
 
 There are only 15 colors possible. Each color has a maximum length of 6. <br>
