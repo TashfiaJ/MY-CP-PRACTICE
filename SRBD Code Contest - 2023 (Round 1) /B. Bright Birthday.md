@@ -4,6 +4,8 @@
 # Solution
 
 <details>
+<summary>Hint</summary>
+Bit Manipulation
 <summary>Idea</summary>
 
 There are only 15 colors possible. Each color has a maximum length of 6. <br>
@@ -20,6 +22,7 @@ The answer is the maximum size of the subset among all possible subsets which ca
 using namespace std;
 typedef long long ll;
 const ll INF = 1e9;
+// Bit Manipulation
 
 vector<string>c={ "blue", "green", "yellow", "red", "purple", "orange", "pink", "grey", "cyan", "brown", "ash", "silver", "gold", "white", "black" };
 
