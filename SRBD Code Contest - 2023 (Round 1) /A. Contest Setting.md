@@ -1,7 +1,7 @@
 # Problem
 [Contest Setting](https://www.hackerrank.com/contests/srbd-code-contest-2023-round-1/challenges/contest-setting-1)
 
-#Solution
+# Solution
 <details>
 <Summary>Idea1</Summary>
 We can just do a binary search on the value of $m$ to find the maximum value of $m$. After that, we can say, $N = 2^m$
