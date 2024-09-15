@@ -3,6 +3,10 @@
 
 # Solution
 <details>
+<Summary>Hint</Summary>
+Binary Search
+</details>
+<details>
 <Summary>Idea1</Summary>
 We can just do a binary search on the value of $m$ to find the maximum value of $m$. After that, we can say, $N = 2^m$
 </details>
@@ -50,6 +54,10 @@ signed main()
 ```
 </details>
 
+<details>
+<Summary>Hint</Summary>
+Quadratic Equation
+</details>
 <details>
 <Summary>Idea2</Summary>
 Quadratic equation: $m^2$ + 2my -2b=0
