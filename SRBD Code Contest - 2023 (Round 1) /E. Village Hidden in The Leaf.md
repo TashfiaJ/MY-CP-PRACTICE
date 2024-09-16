@@ -4,6 +4,11 @@
 # Solution
 
 <details>
+<Summary>Hint</Summary>
+Sieve, Binary Search
+</details>
+
+<details>
 <summary>Idea</summary>
 
 Let us answer $type-1$ query first. <br>
