@@ -4,6 +4,11 @@
 # Solution
 
 <details>
+<Summary>Hint</Summary>
+LCA
+</details>
+
+<details>
 <summary>Idea</summary>
 
 The problem can be simplified as: "We have to find the number of $1s$ in the path from node $x$ to $y$".
