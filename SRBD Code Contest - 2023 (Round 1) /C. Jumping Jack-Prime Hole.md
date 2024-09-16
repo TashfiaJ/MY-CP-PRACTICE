@@ -4,6 +4,11 @@
 # Solution
 
 <details>
+<Summary>Hint</Summary>
+DP
+</details>
+
+<details>
 <summary>Idea</summary>
 
 Two key things to notice: <br>
